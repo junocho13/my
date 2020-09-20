@@ -1,0 +1,109 @@
+create user '유저명'@'%' identified with mysql_native_password by '비번';
+이 명령어로 기존 방식으로 암호를 사용하여 접속이 가능한 유저를 새로 만들어주시고,
+grant all privileges on . to '유저명'@'%'; 
+
+
+table AUTH(
+id varchar(20) not null,
+password varchar(20) not null,
+PRIMARY KEY (id)
+);
+
+table BOARD
+
+id	user	password	datetime	hit	title context
+
+create table BOARD(
+id int not null auto_increment,
+user varchar(20),
+password varchar(20),
+datetime DATETIME,
+hit int,
+title varchar(255),
+context text,
+PRIMARY KEY (id)
+);
+
+
+create table STOCKINFO(
+code varchar(6) not null,
+name varchar(50),
+price int,
+priceopen int,
+high int,
+low int,
+volume int,
+marketcap BIGINT,
+tradetime DATETIME,
+datadelay int,
+pe FLOAT,
+eps FLOAT,
+high52 FLOAT,
+low52 FLOAT,
+`change` int,
+beta FLOAT,
+changepct FLOAT,
+closeyest int,
+shares BIGINT,
+PRIMARY KEY (code),
+corp_code varchar(8)
+);
+create unique index STOCKINFO_INDEX ON STOCKINFO(code ASC);
+
+create user 'juno'@'%' identified by '930118';
+
+drop user juno;
+
+flush privileges;
+
+출처: https://freeprog.tistory.com/168 [취미로 하는 프로그래밍 !!!]
+
+grant all privileges on *.* to 'juno'@'localhost' with grant option;
+
+출처: https://freeprog.tistory.com/168 [취미로 하는 프로그래밍 !!!]
+create table STOCKINFO(
+code varchar(6) not null,
+name varchar(50),
+price int,
+priceopen int,
+high int,
+low int,
+volume int,
+marketcap BIGINT,
+tradetime DATETIME,
+datadelay int,
+pe FLOAT,
+eps FLOAT,
+high52 FLOAT,
+low52 FLOAT,
+`change` int,
+beta FLOAT,
+changepct FLOAT,
+closeyest int,
+shares BIGINT,
+PRIMARY KEY (code)
+);
+
+
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+
+ALTER DATABASE jonver CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER TABLE STOCKINFO convert to charset utf8;
+
+git pull origin master --allow-unrelated-histories
+
+출처: https://dongza.tistory.com/7 [눈누난나]
+
+db.query(`INSERT INTO STOCKINFO VALUES (${row})`, function (error, results, fields) { // 초기화
+            if (error) console.log(error);
+          });
+
+http://3.133.120.25:3001/code/all

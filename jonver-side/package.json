@@ -1,0 +1,23 @@
+{
+  "name": "jonver-side",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "googleapis": "^59.0.0",
+    "helmet": "^4.1.0",
+    "sanitize-html": "^1.27.4",
+    "serve-favicon": "^2.5.0"
+  }
+}

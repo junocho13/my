@@ -1,0 +1,25 @@
+create user '유저명'@'%' identified with mysql_native_password by '비번';
+이 명령어로 기존 방식으로 암호를 사용하여 접속이 가능한 유저를 새로 만들어주시고,
+grant all privileges on . to '유저명'@'%'; 
+
+
+create table AUTH(
+id varchar(20) not null,
+password varchar(20) not null,
+PRIMARY KEY (id)
+);
+
+table BOARD
+
+id	user	password	datetime	hit	title context
+
+create table BOARD(
+id int not null auto_increment,
+user varchar(20),
+password varchar(20),
+datetime DATETIME,
+hit int,
+title varchar(255),
+context text,
+PRIMARY KEY (id)
+);
